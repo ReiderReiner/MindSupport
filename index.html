@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="uk">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Mind Support</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <header>
+        <img src="images\logo.png" class="logo"></img>
+        <a class="Mind-Support">
+            Mind <br> Support
+        </a>
+        <nav>
+            <button href="#" class="active">Головна сторінка</button>
+            <button href="#">Відео</button>
+            <button href="#">ЧатБот</button>
+        </nav>
+        <script>
+            const buttons = document.querySelectorAll('nav button');
+
+            buttons.forEach(button => {
+                button.addEventListener('click', () => {
+                    buttons.forEach(btn => btn.classList.remove('active')); // прибираємо з усіх
+                    button.classList.add('active'); // додаємо натиснутій
+                });
+            });
+        </script>
+        <button class="settings">
+            <img src="images\settings.png" class="settingsimg"></img>
+        </button>
+        <button class="cabinet">
+            <img src="images\avatar.png" class="cabinetimg">
+            <a class='avatar-title'>Title <br> Description</a>
+        </button>
+    </header>
+    <main>
+        <h1 class="lozung">Навчайся без стресу разом з нами!</h1>
+        <h2 class="deviz">MindSupport допомагає студентам залишатися зосередженими та емоційно врівноваженими. Отримуй
+            доступ до <br> навчальних матеріалів, підтримки чат-бота та ресурсів — будь-коли й будь-де.</h2>
+        <h3 class="support">Підтримка для студентів 24/7</h3>
+    </main>
+</body>
+
+</html>
