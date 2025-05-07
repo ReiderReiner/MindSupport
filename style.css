@@ -75,7 +75,7 @@ nav button {
     color: white;
     cursor: pointer;
     transition: background-color 0.3s;
-    margin: 0px 26px 0px;
+    margin: 0px 20px 0px;
 }
 
 .settingsimg {
@@ -142,8 +142,8 @@ nav button.active {
     align-self: stretch;
     flex-grow: 0;
     opacity: 1;
-    font-family: Varela;
-    font-size: 16px;
+    font-family: Verdana;
+    font-size: 14px;
     font-weight: 600;
     font-stretch: normal;
     font-style: normal;
@@ -160,7 +160,7 @@ nav button.active {
     margin: 67px 0px 0px;
     opacity: 0.5;
     justify-content: center;
-    font-family: Varela;
+    font-family: Verdana;
     font-size: 32px;
     font-weight: normal;
     font-stretch: normal;
@@ -177,7 +177,7 @@ nav button.active {
     flex-grow: 0;
     margin: 0px 0px 0px 0px;
     opacity: 0.3;
-    font-family: Varela;
+    font-family: Verdana;
     justify-content: center;
     font-size: 20px;
     font-weight: normal;
@@ -194,7 +194,7 @@ nav button.active {
     height: 42px;
     flex-grow: 0;
     opacity: 0.5;
-    font-family: Varela;
+    font-family: Verdana;
     font-size: 20px;
     font-weight: normal;
     font-stretch: normal;
@@ -203,4 +203,289 @@ nav button.active {
     letter-spacing: 0.6px;
     text-align: center;
     color: #000;
+}
+
+.modal {
+    z-index: 1000;
+    width: 289px;
+    height: 399px;
+    flex-grow: 0;
+    margin: -150px 119.5px 73px 575.5px;
+    padding: 10px 9px 22px 8px;
+    border-radius: 10px;
+    border: solid 1px #000;
+    background-color: #fff;
+    position: absolute;
+}
+
+label {
+    height: 22px;
+    align-self: stretch;
+    flex-grow: 0;
+    font-family: Verdana;
+    font-size: 16px;
+    font-weight: normal;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.4;
+    letter-spacing: normal;
+    text-align: left;
+    color: #1e1e1e;
+}
+
+input {
+    width: 255px;
+    height: 16px;
+    align-self: stretch;
+    flex-grow: 0;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    padding: 12px 16px;
+    border-radius: 8px;
+    border: solid 1px #383838;
+    background-color: #fff;
+    margin: 0 0 20px;
+}
+
+.registry-entry {
+    width: 289px;
+    height: 40px;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+    padding: 12px;
+    border-radius: 8px;
+    border: solid 1px #2c2c2c;
+    background-color: #65558f;
+    color: #f5f5f5;
+    cursor: pointer;
+    margin: 8px 0 20px;
+}
+
+.registry-entry-google {
+    width: 289px;
+    height: 40px;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+    padding: 12px;
+    border-radius: 8px;
+    border: solid 1px #2c2c2c;
+    background-color: #f5f5f5;
+    font-family: Verdana;
+    color: #65558f;
+    cursor: pointer;
+    margin: 0 0 20px;
+}
+
+.Tab {
+    width: 222px;
+    height: 55px;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin: 97px 159px 17px 50px;
+    padding: 4px 12px;
+    opacity: 0.5;
+    border-bottom: solid 1px #65398c;
+}
+
+.video {
+    width: 222px;
+    height: 22px;
+    flex-grow: 1;
+    opacity: 0.5;
+    font-family: Verdana;
+    font-size: 16px;
+    font-weight: normal;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.4;
+    letter-spacing: normal;
+    text-align: center;
+    color: #151818;
+}
+
+.video-rolics {
+    align-items: center;
+    justify-content: space-between;
+    display: flex;
+    width: 1440px;
+    height: fit-content;
+    flex-grow: 0;
+    padding: 0 22px 0 0;
+    opacity: 1;
+    margin: 0 0 0 50px;
+}
+
+.Rich-Tooltip {
+    width: 400px;
+    height: 163.2px;
+    flex-grow: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    gap: 9.6px;
+    margin: 17px 67px 16.8px 0;
+    padding: 0 0 9.6px;
+    opacity: 0.5;
+    border-radius: 14.4px;
+    box-shadow: 0 2.4px 7.2px 2.4px rgba(0, 0, 0, 0.15), 0 1.2px 2.4px 0 rgba(0, 0, 0, 0.3);
+    background-image: linear-gradient(to bottom, #d7baee 50%, #a580c2);
+}
+
+.Content {
+    width: 374.4px;
+    height: 96px;
+    flex-grow: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: stretch;
+    gap: 4.8px;
+    padding: 14.4px 19.2px 4.8px;
+    opacity: 0.5;
+}
+
+.Subhead {
+    height: 22px;
+    align-self: stretch;
+    flex-grow: 0;
+    opacity: 1;
+    font-family: Verdana;
+    font-size: 16.8px;
+    font-weight: 500;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.43;
+    letter-spacing: 0.12px;
+    text-align: left;
+    color: #49454f;
+}
+
+.Supporting-text {
+    height: 44px;
+    align-self: stretch;
+    flex-grow: 0;
+    opacity: 1;
+    font-family: Verdana;
+    font-size: 16.8px;
+    font-weight: normal;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.43;
+    letter-spacing: 0.3px;
+    text-align: left;
+    color: #49454f;
+}
+
+.Actions {
+    height: 48px;
+    align-self: stretch;
+    flex-grow: 0;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 9.6px;
+    padding: 0 9.6px;
+    opacity: 1;
+}
+
+.Primary-button {
+    width: 136.6px;
+    height: 48px;
+    flex-grow: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: stretch;
+    gap: 9.6px;
+    padding: 0;
+    opacity: 1;
+    border-radius: 120px;
+    background-color: #65558f;
+    padding: 0 0 0 26px;
+}
+
+.label-text {
+    width: 79px;
+    height: 24px;
+    flex-grow: 0;
+    opacity: 1;
+    font-family: Verdana;
+    font-size: 16.8px;
+    font-weight: 500;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.43;
+    letter-spacing: 0.12px;
+    text-align: center;
+    color: #fff;
+}
+
+.Rich-Tooltip-license {
+
+    width: 400px;
+    height: 176px;
+    flex-grow: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    gap: 8px;
+    margin: 17px 67px 16.8px 0;
+    padding: 0 0 8px;
+    opacity: 0.5;
+    border-radius: 12px;
+    box-shadow: 0 2px 6px 2px rgba(0, 0, 0, 0.15), 0 1px 2px 0 rgba(0, 0, 0, 0.3);
+    background-color: #f3edf7;
+}
+
+.Primary-button-license {
+    width: 136.6px;
+    height: 48px;
+    flex-grow: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: stretch;
+    gap: 9.6px;
+    padding: 0;
+    opacity: 1;
+    border-radius: 120px;
+    background-color: #f7f2fa;
+    padding: 0 0 0 26px;
+}
+
+.label-text-license {
+    width: 79px;
+    height: 24px;
+    flex-grow: 0;
+    opacity: 1;
+    font-family: Verdana;
+    font-size: 16.8px;
+    font-weight: 500;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.43;
+    letter-spacing: 0.12px;
+    text-align: center;
+    color: #65558f;
+}
+
+.hidden {
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.5s ease-out, visibility 0.5s ease-out;
 }

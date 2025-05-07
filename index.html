@@ -9,14 +9,14 @@
 
 <body>
     <header>
-        <img src="images\logo.png" class="logo"></img>
+        <img src="images/logo.png" class="logo">
         <a class="Mind-Support">
             Mind <br> Support
         </a>
         <nav>
-            <button href="#" class="active">Головна сторінка</button>
-            <button href="#">Відео</button>
-            <button href="#">ЧатБот</button>
+            <button class="active">Головна сторінка</button>
+            <button>Відео</button>
+            <button>ЧатБот</button>
         </nav>
         <script>
             const buttons = document.querySelectorAll('nav button');
@@ -29,10 +29,10 @@
             });
         </script>
         <button class="settings">
-            <img src="images\settings.png" class="settingsimg"></img>
+            <img src="images/settings.png" class="settingsimg"></img>
         </button>
         <button class="cabinet">
-            <img src="images\avatar.png" class="cabinetimg">
+            <img src="images/avatar.png" class="cabinetimg">
             <a class='avatar-title'>Title <br> Description</a>
         </button>
     </header>
@@ -41,7 +41,172 @@
         <h2 class="deviz">MindSupport допомагає студентам залишатися зосередженими та емоційно врівноваженими. Отримуй
             доступ до <br> навчальних матеріалів, підтримки чат-бота та ресурсів — будь-коли й будь-де.</h2>
         <h3 class="support">Підтримка для студентів 24/7</h3>
+        <div class="modal" id="register-modal">
+            <label id="email-label">Пошта</label>
+            <input type="post">
+            <label id="password-label">Пароль</label>
+            <input type="password">
+
+            <button class="registry-entry" id="main-button">Зареєструватися</button>
+            <button class="registry-entry-google" id="google-button">Зареєструватися через Google</button>
+
+            <label id="switch-label">Вже маєте аккаунт?</label>
+            <button class="registry-entry" id="switch-button">Увійти</button>
+            <script>
+                const mainButton = document.getElementById('main-button');
+                const googleButton = document.getElementById('google-button');
+                const switchLabel = document.getElementById('switch-label');
+                const switchButton = document.getElementById('switch-button');
+
+                let isLogin = false;
+
+                switchButton.addEventListener('click', () => {
+                    if (isLogin) {
+                        // Перехід на реєстрацію
+                        mainButton.textContent = 'Зареєструватися';
+                        googleButton.textContent = 'Зареєструватися через Google';
+                        switchLabel.textContent = 'Вже маєте аккаунт?';
+                        switchButton.textContent = 'Увійти';
+                        isLogin = false;
+                    } else {
+                        // Перехід на вхід
+                        mainButton.textContent = 'Увійти';
+                        googleButton.textContent = 'Увійти через Google';
+                        switchLabel.textContent = 'Ще не маєте аккаунту?';
+                        switchButton.textContent = 'Зареєструватися';
+                        isLogin = true;
+                    }
+                });
+
+            </script>
+        </div>
+
+        <div class="Tab">
+            <label class="video">
+                Відео уроки
+            </label>
+        </div>
+        <div class="video-rolics">
+            <div class="Rich-Tooltip">
+                <div class="Content">
+                    <span class="Subhead">
+                        Відео урок
+                    </span>
+                    <span class="Supporting-text">
+                        Тайм-менеджмент для студентів: перші кроки
+                    </span>
+                </div>
+                <div class="Actions">
+                    <button class="Primary-button"><span class="label-text">
+                            Дивитись
+                        </span></button>
+                </div>
+            </div>
+            <div class="Rich-Tooltip">
+                <div class="Content">
+                    <span class="Subhead">
+                        Відео урок
+                    </span>
+                    <span class="Supporting-text">
+                        Тайм-менеджмент для студентів: перші кроки
+                    </span>
+                </div>
+                <div class="Actions">
+                    <button class="Primary-button"><span class="label-text">
+                            Дивитись
+                        </span></button>
+                </div>
+            </div>
+            <div class="Rich-Tooltip">
+                <div class="Content">
+                    <span class="Subhead">
+                        Відео урок
+                    </span>
+                    <span class="Supporting-text">
+                        Тайм-менеджмент для студентів: перші кроки
+                    </span>
+                </div>
+                <div class="Actions">
+                    <button class="Primary-button"><span class="label-text">
+                            Дивитись
+                        </span></button>
+                </div>
+            </div>
+
+        </div>
+        <div class="video-rolics">
+            <div class="Rich-Tooltip">
+                <div class="Content">
+                    <span class="Subhead">
+                        Відео урок
+                    </span>
+                    <span class="Supporting-text">
+                        Тайм-менеджмент для студентів: перші кроки
+                    </span>
+                </div>
+                <div class="Actions">
+                    <button class="Primary-button"><span class="label-text">
+                            Дивитись
+                        </span></button>
+                </div>
+            </div>
+            <div class="Rich-Tooltip">
+                <div class="Content">
+                    <span class="Subhead">
+                        Відео урок
+                    </span>
+                    <span class="Supporting-text">
+                        Тайм-менеджмент для студентів: перші кроки
+                    </span>
+                </div>
+                <div class="Actions">
+                    <button class="Primary-button"><span class="label-text">
+                            Дивитись
+                        </span></button>
+                </div>
+            </div>
+            <div class="Rich-Tooltip-license">
+                <div class="Content">
+                    <span class="Subhead">
+                        Ліцензійна угода
+                    </span>
+                    <span class="Supporting-text">
+                        Прийняття умов: використовуючи наш застосунок, ви погоджуєтесь дотримуватись
+                        цієї ліцензійної угоди.
+                    </span>
+
+                </div>
+                <div class="Actions">
+                    <button class="Primary-button-license">
+                        <span class="label-text-license">
+                            Відхилити
+                        </span>
+                    </button>
+                    <button class="Primary-button-license">
+                        <span class="label-text-license">
+                            Прийняти
+                        </span>
+                    </button>
+                </div>
+            </div>
+            <script>
+                document.addEventListener('DOMContentLoaded', function () {
+                    const licenseBlock = document.querySelector('.Rich-Tooltip-license');
+                    const licenseButtons = document.querySelectorAll('.Primary-button-license');
+
+                    licenseButtons.forEach(function (button) {
+                        button.addEventListener('click', function () {
+                            licenseBlock.classList.add('hidden');
+                        });
+                    });
+                });
+
+            </script>
+
+        </div>
     </main>
+
+
 </body>
 
 </html>
