@@ -28,9 +28,16 @@
                 });
             });
         </script>
-        <button class="settings">
-            <img src="images/settings.png" class="settingsimg"></img>
+        <button class="settings" onclick="openSettings()">
+            <img src="images/settings.png" class="settingsimg" alt="Налаштування">
         </button>
+        <script>function openSettings() {
+                const settingsWindow = document.querySelector('.settings-open');
+                if (settingsWindow) {
+                    settingsWindow.style.display = 'block';
+                }
+            }
+        </script>
         <button class="cabinet">
             <img src="images/avatar.png" class="cabinetimg">
             <a class='avatar-title'>Title <br> Description</a>
@@ -170,6 +177,98 @@
             </script>
 
         </div>
+        <div class="settings-open">
+            <span class="settings_name">
+                Налаштування
+            </span>
+            <div class="set-settings" style="margin: 20px 0 44px 0;"><span class="top-settings">
+                    Мова
+                </span>
+                <div class="dropdown">
+                    <div class="dropdown-toggle" onclick="toggleDropdown()">
+                        <span id="selected-lang">Українська</span>
+                        <span class="arrow">▼</span>
+                    </div>
+                    <div class="dropdown-menu" id="dropdown-menu">
+                        <div class="dropdown-item" onclick="selectLang('Українська')">Українська</div>
+                        <div class="dropdown-item" onclick="selectLang('Англійська')">Англійська</div>
+                    </div>
+                </div>
+                <script>function toggleDropdown() {
+                        const menu = document.getElementById('dropdown-menu');
+                        menu.style.display = menu.style.display === 'block' ? 'none' : 'block';
+                    }
+
+                    function selectLang(lang) {
+                        document.getElementById('selected-lang').textContent = lang;
+                        document.getElementById('dropdown-menu').style.display = 'none';
+                    }
+                </script>
+
+            </div>
+            <div class="set-settings"><span class="top-settings">
+                    Тема
+                </span>
+                <div class="dropdown theme-dropdown">
+                    <div class="dropdown-toggle" onclick="toggleThemeDropdown()">
+                        <span id="selected-theme">Світла</span>
+                        <span class="arrow">▼</span>
+                    </div>
+                    <div class="dropdown-menu" id="theme-dropdown-menu">
+                        <div class="dropdown-item" onclick="selectTheme('Світла')">Світла</div>
+                        <div class="dropdown-item" onclick="selectTheme('Темна')">Темна</div>
+                    </div>
+                </div>
+                <script>function toggleThemeDropdown() {
+                        const menu = document.getElementById('theme-dropdown-menu');
+                        menu.style.display = menu.style.display === 'block' ? 'none' : 'block';
+                    }
+
+                    function selectTheme(theme) {
+                        document.getElementById('selected-theme').textContent = theme;
+                        document.getElementById('theme-dropdown-menu').style.display = 'none';
+
+                        /* 🔄 Приклад: перемикання теми сторінки
+                        if (theme === 'Темна') {
+                            document.body.style.backgroundColor = '#333';
+                            document.body.style.color = '#fff';
+                        } else {
+                            document.body.style.backgroundColor = '#fff';
+                            document.body.style.color = '#000';
+                        }*/
+                    }
+                </script>
+            </div>
+            <div class="set-settings">
+                <span class="top-settings">
+                    Ім’я
+                </span>
+                <span class="top-settings" style="margin: 11px 245px 29px 1px;">Eugene</span>
+            </div>
+            <div class="set-settings"><span class="top-settings">
+                    Пошта
+                </span>
+                <span class="top-settings" style="margin: 11px 245px 29px 1px;">test123@gmail.com</span>
+            </div>
+            <div class="set-settings"><span class="top-settings">
+                    Пароль
+                </span>
+                <button class="change-password"><span class="change-password-text">Змінити пароль</span></button>
+            </div>
+            <div class="set-settings" style="justify-content: end;">
+                <button class="cancel-btn" onclick="closeSettings()">Скасувати</button>
+                <button class="save-btn" onclick="closeSettings()">Зберегти</button>
+                <script>function closeSettings() {
+                        const settingsWindow = document.querySelector('.settings-open');
+                        if (settingsWindow) {
+                            settingsWindow.style.display = 'none';
+                        }
+                    }
+                </script>
+            </div>
+        </div>
+
+
     </main>
 
 
