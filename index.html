@@ -19,14 +19,14 @@
             <button>ЧатБот</button>
         </nav>
         <script>
-            const buttons = document.querySelectorAll('nav button');
+            /*const buttons = document.querySelectorAll('nav button');
 
             buttons.forEach(button => {
                 button.addEventListener('click', () => {
                     buttons.forEach(btn => btn.classList.remove('active')); // прибираємо з усіх
                     button.classList.add('active'); // додаємо натиснутій
                 });
-            });
+            });*/
         </script>
         <button class="settings">
             <img src="images/settings.png" class="settingsimg"></img>
@@ -49,6 +49,17 @@
 
             <button class="registry-entry" id="main-button">Зареєструватися</button>
             <button class="registry-entry-google" id="google-button">Зареєструватися через Google</button>
+
+            <script>
+                document.getElementById('main-button').addEventListener('click', function () {
+                    window.location.href = 'main.html';
+                });
+
+                document.getElementById('google-button').addEventListener('click', function () {
+                    window.location.href = 'main.html';
+                });
+            </script>
+
 
             <label id="switch-label">Вже маєте аккаунт?</label>
             <button class="registry-entry" id="switch-button">Увійти</button>
@@ -190,7 +201,7 @@
                 </div>
             </div>
             <script>
-                document.addEventListener('DOMContentLoaded', function () {
+                /*document.addEventListener('DOMContentLoaded', function () {
                     const licenseBlock = document.querySelector('.Rich-Tooltip-license');
                     const licenseButtons = document.querySelectorAll('.Primary-button-license');
 
@@ -198,8 +209,8 @@
                         button.addEventListener('click', function () {
                             licenseBlock.classList.add('hidden');
                         });
-                    });
-                });
+                    }); 
+                });*/
 
             </script>
 

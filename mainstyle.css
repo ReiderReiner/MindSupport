@@ -624,3 +624,47 @@ nav button.active {
     color: #fff;
     border: none;
 }
+
+.search-div {
+    align-self: stretch;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 4px;
+    padding: 4px;
+}
+
+.Search-bar {
+    width: 645px;
+    height: 56px;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: stretch;
+    gap: 4px;
+    margin: 75px 204px 0 50px;
+    padding: 0;
+    border-radius: 28px;
+    border: solid 1px #6b6a6a;
+    background-color: #ece6f0;
+}
+
+.search-input {
+    outline: none;
+    width: 533px;
+    height: 48px;
+    align-self: stretch;
+    flex-grow: 0;
+    display: flex;
+    margin: 4px 0 0 12px;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 10px;
+    padding: 0;
+    background-color: #ece6f0;
+    border: none;
+
+}

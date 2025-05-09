@@ -15,7 +15,7 @@
         </a>
         <nav>
             <button class="active">Головна сторінка</button>
-            <button>Відео</button>
+            <button id="video-button">Відео</button>
             <button>ЧатБот</button>
         </nav>
         <script>
@@ -48,12 +48,23 @@
         <h2 class="deviz">MindSupport допомагає студентам залишатися зосередженими та емоційно врівноваженими. Отримуй
             доступ до <br> навчальних матеріалів, підтримки чат-бота та ресурсів — будь-коли й будь-де.</h2>
         <h3 class="support">Підтримка для студентів 24/7</h3>
-        <button class="Extended-FAB">
+        <button class="Extended-FAB" id="video-button">
             <img src="images/logo.png" class="logo-start">
             <span class="start">
                 Почати!
             </span>
         </button>
+        <script>
+            document.getElementById('video-button').addEventListener('click', function () {
+                window.location.href = 'videos.html';
+            });
+
+            document.querySelector('.Extended-FAB').addEventListener('click', function () {
+                window.location.href = 'videos.html';
+            });
+        </script>
+
+
         <div class="Tab">
             <label class="video">
                 Відео уроки
@@ -177,7 +188,7 @@
             </script>
 
         </div>
-        <div class="settings-open">
+        <div class="settings-open" style="display: none;">
             <span class="settings_name">
                 Налаштування
             </span>
