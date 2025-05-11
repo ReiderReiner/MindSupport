@@ -678,7 +678,7 @@ nav button.active {
     justify-content: center;
     align-items: stretch;
     gap: 8px;
-    margin: 0 50px 0 70px;
+    margin: 0 50px 0 50px;
     padding: 0;
     border-radius: 100px;
     background-color: #65558f;
