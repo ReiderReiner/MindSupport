@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="uk">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Mind Support</title>
+    <link rel="stylesheet" href="personalstyle.css">
+</head>
+
+<body>
+    <header>
+        <img src="images/logo.png" class="logo">
+        <a class="Mind-Support">
+            Mind <br> Support
+        </a>
+        <nav>
+            <button class="active">Головна сторінка</button>
+            <button id="video-button">Відео</button>
+            <button>ЧатБот</button>
+        </nav>
+        <script>
+            const buttons = document.querySelectorAll('nav button');
+
+            buttons.forEach(button => {
+                button.addEventListener('click', () => {
+                    buttons.forEach(btn => btn.classList.remove('active')); // прибираємо з усіх
+                    button.classList.add('active'); // додаємо натиснутій
+                });
+            });
+        </script>
+        <button class="settings" onclick="openSettings()">
+            <img src="images/settings.png" class="settingsimg" alt="Налаштування">
+        </button>
+        <script>function openSettings() {
+                const settingsWindow = document.querySelector('.settings-open');
+                if (settingsWindow) {
+                    settingsWindow.style.display = 'block';
+                }
+            }
+        </script>
+        <button class="cabinet">
+            <img src="images/avatar.png" class="cabinetimg">
+            <a class='avatar-title'>Title <br> Description</a>
+        </button>
+    </header>
+    <main>
+        <div class="search-div">
+            <div class="Search-bar">
+                <img src="images/avatar.png" class="personal-avatar">
+                <span class="Name"> Name</span>
+            </div>
+        </div>
+
+        <div class="round-div">
+            <div class="Round-bar">
+                <span class="amezing">Чудово </span>
+                <img src="images/progress.png" class="circular-progress">
+                <span class="keepitup">Ти займаєшся вже 15 хвилин підряд, так тримати!</span>
+            </div>
+            <div class="calendar-bar">
+                <div class="Options">
+                    <div class="weekch">
+                        <span class="Week-day-Day">Mon, Aug 17</span>
+                    </div>
+                    <div class="line"></div>
+                    <div class="Local-Selection-Row">
+                        <div class="state-layer">
+                            <span class="label-text">August 2025</span>
+                            <img src="images/down.png" class="downicon">
+                        </div>
+                        <div>
+                            <img src="images/left.png" class="lefticon">
+                            <img src="images/right.png" class="righticon">
+                        </div>
+                    </div>
+                    <div class="Dateweek">
+                        <div class="Sunday"><span class="S">S</span></div>
+                        <div class="Monday"><span class="M">M</span></div>
+                        <div class="Tuesday"><span class="T">T</span></div>
+                        <div class="Wednesday"><span class="W">W</span></div>
+                        <div class="Thursday"><span class="Th">T</span></div>
+                        <div class="Friday"><span class="F">F</span></div>
+                        <div class="Saturday"><span class="St">S</span></div>
+                    </div>
+                    <div class="Date1">
+                        <div class="Sunday"><span class="ch30">30</span></div>
+                        <div class="Monday"><span class="ch30">31</span></div>
+                        <div class="Tuesday"><span class="T">1</span></div>
+                        <div class="Wednesday"><span class="W">2</span></div>
+                        <div class="Thursday"><span class="Th">3</span></div>
+                        <div class="Friday"><span class="F">4</span></div>
+                        <div class="Saturday"><span class="ch5">5</div>
+                    </div>
+                    <div class="Date1">
+                        <div class="Sunday"><span class="S">6</span></div>
+                        <div class="Monday"><span class="M">7</span></div>
+                        <div class="Tuesday"><span class="T">8</span></div>
+                        <div class="Wednesday"><span class="W">9</span></div>
+                        <div class="Thursday"><span class="Th">10</span></div>
+                        <div class="Friday"><span class="F">11</span></div>
+                        <div class="Saturday"><span class="St">12</span></div>
+                    </div>
+                    <div class="Date1">
+                        <div class="Sunday"><span class="S">13</span></div>
+                        <div class="Monday"><span class="M">14</span></div>
+                        <div class="Tuesday"><span class="T">15</span></div>
+                        <div class="Wednesday"><span class="W">16</span></div>
+                        <div class="chc">
+                            <div class="container"><span class="ch17">17</span></div>
+                        </div>
+                        <div class="Friday"><span class="F">18</span></div>
+                        <div class="Saturday"><span class="St">19</span></div>
+                    </div>
+                    <div class="Date1">
+                        <div class="Sunday"><span class="S">20</span></div>
+                        <div class="Monday"><span class="M">21</span></div>
+                        <div class="Tuesday"><span class="T">22</span></div>
+                        <div class="Wednesday"><span class="W">23</span></div>
+                        <div class="Thursday"><span class="Th">24</span></div>
+                        <div class="Friday"><span class="F">25</span></div>
+                        <div class="Saturday"><span class="St">26</span></div>
+                    </div>
+                    <div class="Date1">
+                        <div class="Sunday"><span class="S">27</span></div>
+                        <div class="Monday"><span class="M">28</span></div>
+                        <div class="Tuesday"><span class="T">29</span></div>
+                        <div class="Wednesday"><span class="W">30</span></div>
+                        <div class="Thursday"><span class="Th">31</span></div>
+                        <div class="Friday"><span class="ch30">1</span></div>
+                        <div class="Saturday"><span class="ch30">2</div>
+                    </div>
+                    <div class="Button-container">
+                        <div class="btnok"><span class="canceltext">Cancel</span></div>
+                        <div class="btnok"><span class="textok">OK</span></div>
+                    </div>
+                </div>
+                <div class="txtwow">
+                    <span class="textwow">Вау, ти заходив вже 6 днів підряд, дивовижно!</span>
+                </div>
+            </div>
+        </div>
+        <div class="jek">
+            <div class="roundpur">
+                <img src="images/recomend.png" class="roundpur">
+            </div>
+            <div class="Plain-Tooltip"><span class="Supporting-text">Рекомендовано до перегляду</span></div>
+        </div>
+    </main>
+</body>
