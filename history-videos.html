@@ -16,12 +16,15 @@
         <nav>
             <button id="main-button">Головна сторінка</button>
             <button class="active">Відео</button>
-            <button>ЧатБот</button>
+            <button id="chat-bot-button">ЧатБот</button>
         </nav>
         <script>
             document.getElementById('main-button').addEventListener('click', function () {
                 window.location.href = 'main.html';
-            }); </script>
+            });
+            document.getElementById('chat-bot-button').addEventListener('click', function () {
+                window.location.href = 'chat-bote.html';
+            });</script>
         <script>
             const buttons = document.querySelectorAll('nav button');
 
@@ -42,16 +45,21 @@
                 }
             }
         </script>
-        <button class="cabinet">
+        <button class="cabinet" id="cabinet-button">
             <img src="images/avatar.png" class="cabinetimg">
             <a class='avatar-title'>Title <br> Description</a>
         </button>
+        <script>
+            document.getElementById('cabinet-button').addEventListener('click', function () {
+                window.location.href = 'personal_cabinet.html';
+            });
+        </script>
     </header>
     <main>
         <div class="search-div" style="margin: 150px 0 20px 0;">
 
-            <button class="history-button">
-                <span class="history-text" id="video-search-button">Повернутися до пошуку відео</span>
+            <button class="history-button" id="video-search-button">
+                <span class="history-text">Повернутися до пошуку відео</span>
             </button>
             <script>
                 document.getElementById('video-search-button').addEventListener('click', function () {
