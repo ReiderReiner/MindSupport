@@ -16,7 +16,7 @@
         <nav>
             <button class="active">Головна сторінка</button>
             <button id="video-button">Відео</button>
-            <button>ЧатБот</button>
+            <button id="chat-bot-button">ЧатБот</button>
         </nav>
         <script>
             const buttons = document.querySelectorAll('nav button');
@@ -38,10 +38,15 @@
                 }
             }
         </script>
-        <button class="cabinet">
+        <button class="cabinet" id="cabinet-button">
             <img src="images/avatar.png" class="cabinetimg">
             <a class='avatar-title'>Title <br> Description</a>
         </button>
+        <script>
+            document.getElementById('cabinet-button').addEventListener('click', function () {
+                window.location.href = 'personal_cabinet.html';
+            });
+        </script>
     </header>
     <main>
         <h1 class="lozung">Навчайся без стресу разом з нами!</h1>
@@ -57,6 +62,10 @@
         <script>
             document.getElementById('video-button').addEventListener('click', function () {
                 window.location.href = 'videos.html';
+            });
+
+            document.getElementById('chat-bot-button').addEventListener('click', function () {
+                window.location.href = 'chat-bote.html';
             });
 
             document.querySelector('.Extended-FAB').addEventListener('click', function () {

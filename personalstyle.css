@@ -26,7 +26,7 @@ header {
     width: 1440px;
     height: 110px;
     flex-grow: 0;
-    padding: 0 22px 0 0;
+    padding: 0 0px 0 0;
     opacity: 1;
     background-color: #c797ee;
 }
@@ -579,7 +579,7 @@ nav button.active {
     width: 250px;
     height: 30px;
     flex-grow: 0;
-    font-family: Varela;
+    font-family: Verdana;
     font-size: 24px;
     font-weight: normal;
     font-stretch: normal;
@@ -662,7 +662,7 @@ nav button.active {
     width: 205px;
     height: 90px;
     margin: 5px 70px 18px 7px;
-    font-family: Roboto;
+    font-family: Verdana;
     font-size: 54.8px;
     font-weight: normal;
     font-stretch: normal;
@@ -706,7 +706,7 @@ nav button.active {
     width: 86px;
     height: 40px;
     margin: 28px 150px 0 154px;
-    font-family: Varela;
+    font-family: Verdana;
     font-size: 32px;
     font-weight: normal;
     font-stretch: normal;
@@ -729,7 +729,7 @@ nav button.active {
     width: 120px;
     height: 40px;
     margin: 28px 10px 0 10px;
-    font-family: Varela;
+    font-family: Verdana;
     font-size: 32px;
     font-weight: normal;
     font-stretch: normal;
@@ -761,7 +761,7 @@ nav button.active {
     height: 40px;
     align-self: stretch;
     flex-grow: 0;
-    font-family: Roboto;
+    font-family: Verdana;
     font-size: 28px;
     font-weight: normal;
     font-stretch: normal;
@@ -807,7 +807,7 @@ nav button.active {
     width: 81px;
     height: 20px;
     flex-grow: 0;
-    font-family: Roboto;
+    font-family: Verdana;
     font-size: 14px;
     font-weight: 500;
     font-stretch: normal;
@@ -859,7 +859,7 @@ nav button.active {
     width: 10px;
     height: 24px;
     flex-grow: 0;
-    font-family: Roboto;
+    font-family: Verdana;
     font-size: 16px;
     font-weight: normal;
     font-stretch: normal;
@@ -885,7 +885,7 @@ nav button.active {
     width: 14px;
     height: 24px;
     flex-grow: 0;
-    font-family: Roboto;
+    font-family: Verdana;
     font-size: 16px;
     font-weight: normal;
     font-stretch: normal;
@@ -911,7 +911,7 @@ nav button.active {
     width: 10px;
     height: 24px;
     flex-grow: 0;
-    font-family: Roboto;
+    font-family: Verdana;
     font-size: 16px;
     font-weight: normal;
     font-stretch: normal;
@@ -937,7 +937,7 @@ nav button.active {
     width: 15px;
     height: 24px;
     flex-grow: 0;
-    font-family: Roboto;
+    font-family: Verdana;
     font-size: 16px;
     font-weight: normal;
     font-stretch: normal;
@@ -963,7 +963,7 @@ nav button.active {
     width: 10px;
     height: 24px;
     flex-grow: 0;
-    font-family: Roboto;
+    font-family: Verdana;
     font-size: 16px;
     font-weight: normal;
     font-stretch: normal;
@@ -989,7 +989,7 @@ nav button.active {
     width: 9px;
     height: 24px;
     flex-grow: 0;
-    font-family: Roboto;
+    font-family: Verdana;
     font-size: 16px;
     font-weight: normal;
     font-stretch: normal;
@@ -1015,7 +1015,7 @@ nav button.active {
     width: 10px;
     height: 24px;
     flex-grow: 0;
-    font-family: Roboto;
+    font-family: Verdana;
     font-size: 16px;
     font-weight: normal;
     font-stretch: normal;
@@ -1037,7 +1037,7 @@ nav button.active {
     width: 10px;
     height: 24px;
     flex-grow: 0;
-    font-family: Roboto;
+    font-family: Verdana;
     font-size: 16px;
     font-weight: normal;
     font-stretch: normal;
@@ -1052,7 +1052,7 @@ nav button.active {
     width: 9px;
     height: 24px;
     flex-grow: 0;
-    font-family: Roboto;
+    font-family: Verdana;
     font-size: 16px;
     font-weight: normal;
     font-stretch: normal;
@@ -1094,7 +1094,7 @@ nav button.active {
     width: 17px;
     height: 20px;
     flex-grow: 0;
-    font-family: Roboto;
+    font-family: Verdana;
     font-size: 14px;
     font-weight: 500;
     font-stretch: normal;
@@ -1130,7 +1130,7 @@ nav button.active {
     width: 44px;
     height: 20px;
     flex-grow: 0;
-    font-family: Roboto;
+    font-family: Verdana;
     font-size: 18px;
     font-weight: 500;
     font-stretch: normal;
@@ -1145,7 +1145,7 @@ nav button.active {
     width: 19px;
     height: 20px;
     flex-grow: 0;
-    font-family: Roboto;
+    font-family: Verdana;
     font-size: 18px;
     font-weight: 500;
     font-stretch: normal;
@@ -1169,7 +1169,7 @@ nav button.active {
     height: 54px;
     margin: 3px 0 61px 3px;
     padding: 5px 0 0 0;
-    font-family: Varela;
+    font-family: Verdana;
     font-size: 19.2px;
     font-weight: normal;
     font-stretch: normal;
@@ -1202,7 +1202,7 @@ nav button.active {
 }
 
 .Plain-Tooltip {
-    width: 204px;
+    width: 244px;
     height: 24px;
     display: flex;
     flex-direction: column;
@@ -1219,7 +1219,7 @@ nav button.active {
     height: 16px;
     align-self: stretch;
     flex-grow: 0;
-    font-family: Varela;
+    font-family: Verdana;
     font-size: 15px;
     font-weight: normal;
     font-stretch: normal;
