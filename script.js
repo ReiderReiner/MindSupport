@@ -6,9 +6,8 @@ const input = inputArea.querySelector("input");
 const header = document.querySelector(".header");
 const chatButtons = document.querySelector(".chat-buttons");
 
-
-let sessions = JSON.parse(localStorage.getItem("chatSessions")) || {};
 let currentSessionId = null;
+let sessions = JSON.parse(localStorage.getItem("chatSessions")) || {};
 
 // ======= ФУНКЦІЇ =======
 
@@ -20,13 +19,24 @@ function createNewSession() {
   saveSessions();
   renderSessionList();
   renderMessages();
-  showOrHideHeader();  // тут покаже header/buttons, бо нова сесія — пуста
+  showOrHideHeader();  // Показати заголовок та кнопки для нової сесії
 }
-
 
 // Збереження в localStorage
 function saveSessions() {
   localStorage.setItem("chatSessions", JSON.stringify(sessions));
+}
+
+// Отримання осмисленої назви сесії
+function getSessionTitle(sessionId) {
+  const messages = sessions[sessionId];
+  const firstUserMessage = messages.find(msg => msg.sender === "user");
+  if (firstUserMessage) {
+    const words = firstUserMessage.text.trim().split(/\s+/).slice(0, 4).join(" ");
+    return words || `Сесія ${new Date().toLocaleString()}`;
+  } else {
+    return `Сесія ${new Date(parseInt(sessionId)).toLocaleString()}`;
+  }
 }
 
 // Відображення списку сесій
@@ -37,20 +47,20 @@ function renderSessionList() {
     li.classList.add("session-item");
 
     const nameSpan = document.createElement("span");
-    nameSpan.textContent = `Сесія ${sessionId}`;
+    nameSpan.textContent = getSessionTitle(sessionId);
+
     li.addEventListener("click", () => {
       currentSessionId = sessionId;
-      renderSessionList();        // оновити підсвічування
-      renderMessages();           // відобразити повідомлення
-      showOrHideHeader();         // показати або сховати header/buttons
+      renderSessionList();
+      renderMessages();
+      showOrHideHeader();
     });
-    
 
     const deleteBtn = document.createElement("button");
     deleteBtn.textContent = "🗑";
     deleteBtn.classList.add("delete-btn");
     deleteBtn.addEventListener("click", (e) => {
-      e.stopPropagation(); // щоб не вибиралась сесія
+      e.stopPropagation();
       deleteSession(sessionId);
     });
 
@@ -63,78 +73,12 @@ function renderSessionList() {
   });
 }
 
-
 // Відображення повідомлень
 function renderMessages() {
   chatArea.innerHTML = "";
   if (!currentSessionId || !sessions[currentSessionId]) return;
 
-  sessions[currentSessionId].forEach(msg => {
-    const div = document.createElement("div");
-    div.classList.add("message", msg.sender);
-    div.textContent = msg.text;
-    chatArea.appendChild(div);
-  });
-
-  chatArea.scrollTop = chatArea.scrollHeight;
-}
-
-// Додати нове повідомлення
-function addMessage(sender, text) {
-  if (!currentSessionId) return;
-  sessions[currentSessionId].push({ sender, text });
-  saveSessions();
-  renderMessages();
-  showOrHideHeader();  // сховає header/buttons, бо messages.length > 0
-}
-
-
-
-// Виділення активної сесії
-function highlightActiveSession(sessionId) {
-  document.querySelectorAll(".session-item").forEach(item => {
-    item.classList.remove("active");
-    if (item.textContent.includes(sessionId)) {
-      item.classList.add("active");
-    }
-  });
-}
-
-// Показати заголовок і кнопки
-function showHeaderAndButtons() {
-  if (header) header.classList.remove("hidden");
-  if (chatButtons) chatButtons.classList.remove("hidden");
-}
-
-
-// ======= ОБРОБНИКИ =======
-
-// Кнопка "Новий чат"
-newChatBtn.addEventListener("click", createNewSession);
-
-// Відправка повідомлення
-inputArea.addEventListener("submit", e => {
-  e.preventDefault();
-  const text = input.value.trim();
-  if (!text) return;
-  addMessage("user", text);
-  input.value = "";
-
-  // Спростимо бота — відповідає “Добре!”
-  setTimeout(() => {
-    addMessage("bot", "Добре!");
-  }, 500);
-});
-
-// ======= ІНІЦІАЛІЗАЦІЯ =======
-renderSessionList();
-
-function renderMessages() {
-  chatArea.innerHTML = "";
-  if (!currentSessionId || !sessions[currentSessionId]) return;
-
   const messages = sessions[currentSessionId];
-
   messages.forEach(msg => {
     const div = document.createElement("div");
     div.classList.add("message", msg.sender);
@@ -144,17 +88,51 @@ function renderMessages() {
 
   chatArea.scrollTop = chatArea.scrollHeight;
 
-  // 🆕 Ховаємо заголовок і кнопки, якщо є повідомлення
   if (messages.length > 0) {
     hideHeaderAndButtons();
   }
 }
 
-function hideHeaderAndButtons() {
-  header.classList.add("hidden");
-  chatButtons.classList.add("hidden");
+// Додати нове повідомлення
+function addMessage(sender, text) {
+  if (!currentSessionId) return;
+
+  if (sender === "bot") {
+    animateTypingMessage(text);
+  } else {
+    sessions[currentSessionId].push({ sender, text });
+    saveSessions();
+    renderMessages();
+    showOrHideHeader();
+    renderSessionList(); // Оновити заголовок сесії
+  }
 }
 
+// Анімація для повідомлення бота
+function animateTypingMessage(fullText) {
+  const typingDiv = document.createElement("div");
+  typingDiv.classList.add("message", "bot");
+  chatArea.appendChild(typingDiv);
+
+  let index = 0;
+
+  function typeChar() {
+    if (index < fullText.length) {
+      typingDiv.textContent += fullText[index];
+      index++;
+      chatArea.scrollTop = chatArea.scrollHeight;
+      setTimeout(typeChar, 30);
+    } else {
+      sessions[currentSessionId].push({ sender: "bot", text: fullText });
+      saveSessions();
+      renderSessionList(); // Оновити заголовок сесії, якщо потрібно
+    }
+  }
+
+  typeChar();
+}
+
+// Видалення сесії
 function deleteSession(sessionId) {
   delete sessions[sessionId];
   if (currentSessionId === sessionId) {
@@ -167,6 +145,7 @@ function deleteSession(sessionId) {
   renderSessionList();
 }
 
+// Показати або сховати заголовок/кнопки
 function showOrHideHeader() {
   const messages = sessions[currentSessionId] || [];
   if (messages.length === 0) {
@@ -177,3 +156,73 @@ function showOrHideHeader() {
     chatButtons.classList.add("hidden");
   }
 }
+
+function hideHeaderAndButtons() {
+  header.classList.add("hidden");
+  chatButtons.classList.add("hidden");
+}
+
+// ======= ОБРОБНИКИ =======
+
+// Кнопка "Новий чат"
+newChatBtn.addEventListener("click", createNewSession);
+document.getElementById("header-new-chat").addEventListener("click", createNewSession);
+
+
+// Відправка повідомлення
+document.querySelector('.input-area').addEventListener('submit', async function (e) {
+  e.preventDefault();
+  const input = this.querySelector('input');
+  const prompt = input.value.trim();
+  if (!prompt) return;
+
+  addMessage('user', prompt);
+  input.value = '';
+
+  try {
+    const response = await fetch("https://api.groq.com/openai/v1/chat/completions", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+        "Authorization": "Bearer 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"
+      },
+      body: JSON.stringify({
+        model: "meta-llama/llama-4-scout-17b-16e-instruct",
+        messages: [
+          ...sessions[currentSessionId].map(msg => ({
+            role: msg.sender === "user" ? "user" : "assistant",
+            content: msg.text
+          })),
+          { role: "user", content: prompt }
+        ]
+        
+      })
+    });
+
+    const data = await response.json();
+    const botReply = data.choices?.[0]?.message?.content || "Бот не відповів.";
+    addMessage('bot', botReply);
+
+  } catch (err) {
+    console.error(err);
+    addMessage('bot', "Помилка: не вдалося отримати відповідь.");
+  }
+});
+
+// ======= ІНІЦІАЛІЗАЦІЯ =======
+renderSessionList();
+
+const lastSessionBtn = document.getElementById("last-session");
+
+lastSessionBtn.addEventListener("click", () => {
+  const allSessionIds = Object.keys(sessions);
+  if (allSessionIds.length === 0) return;
+
+  // Знайти найновішу сесію за датою (за sessionId як timestamp)
+  const latestSessionId = allSessionIds.sort((a, b) => Number(b) - Number(a))[0];
+
+  currentSessionId = latestSessionId;
+  renderSessionList();
+  renderMessages();
+  showOrHideHeader();
+});
