@@ -184,7 +184,7 @@ document.querySelector('.input-area').addEventListener('submit', async function 
       method: "POST",
       headers: {
         "Content-Type": "application/json",
-        "Authorization": "Bearer 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"
+        "Authorization": "Bearer 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"
       },
       body: JSON.stringify({
         model: "meta-llama/llama-4-scout-17b-16e-instruct",
